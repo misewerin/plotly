@@ -1,0 +1,32 @@
+---
+title: "R Markdown Presentation & Plotly"
+author: "Michael Sewerin"
+date: "28 November 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown Presentation & Plotly
+
+```{r message = FALSE}
+library(plotly)
+```
+
+I use the iris dataset to create a plot.
+```{r load_data}
+data("iris")
+```
+
+Plot sepal.length to petal.lenght and use species to select the color.
+```{r eval = FALSE}
+plot_ly(data = iris, x = iris$Sepal.Length, y = iris$Petal.Length, 
+        color = iris$Species, mode = "markers", type = "scatter")
+```
+
+## Plot
+```{r plot, echo = FALSE}
+plot_ly(data = iris, x = iris$Sepal.Length, y = iris$Petal.Length, color = iris$Species, mode = "markers", type = "scatter")
+```
